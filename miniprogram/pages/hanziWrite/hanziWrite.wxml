@@ -1,0 +1,42 @@
+<!--pages/hanziWrite/hanziWrite.wxml-->
+<view class="app">
+  <view>
+    <view class="pinyin lesson">
+      <view class="py">
+        <text class="pinyin_text2 pyfont">{{spell}}</text>
+      </view>
+      <!-- <view class="pinyin_top"></view> -->
+    </view>
+    <scroll-view id="scrollview" class="lesson-words" scroll-x="true" show-scrollbar="{{false}}" enhanced="{{true}}">
+      <!-- <view style="vertical-align: bottom;"> -->
+      <view style="display: inline-block;width: 321rpx;height: 10rpx;"></view>
+      <view class="word-wrapper {{idx==index?'selected':''}}" style='background-image:url("{{backgroundToSvg}}")' wx:for="{{words}}" wx:key="*this" wx:for-index="idx" bind:tap="onSelectWord" data-index="{{idx}}">{{!showCharacter&&idx==index?'':item}}<view class="left-badge" wx:if="{{result[item]}}">完成</view>
+      </view>
+      <view style="display: inline-block;width: 321rpx;height: 10rpx;"></view>
+      <!-- </view> -->
+    </scroll-view>
+  </view>
+  <view style="text-align: center;">
+    <view id="target">
+      <view style='margin: 24rpx 32rpx;width: 300px;height: 300px;background-image: url("{{backgroundToSvg}}");'>
+        <hanzi-writer-view id="hz-writer" width="300" height="300" withBg="{{true}}" />
+      </view>
+      <view class="actions">
+        <!-- <button class="showCharacter" bindtap="tangleCharacter">{{showCharacter?'着色':'轮廓'}}</button> -->
+        <!-- <button class="hideCharacter" bindtap="tangleOutline">{{showOutline?'跟写':'默写'}}</button> -->
+        <image class="btn" bindtap="playAnimate" src="/images/play/heart-empty.png" mode="widthFix"></image>
+        <image class="btn" bindtap="onTapPrevious" src="/images/play/previous.png" mode="widthFix"></image>
+        <image class="btn" bindtap="playAnimate" src="/images/play/{{playStatus==1?'stop':'play'}}.png" mode="widthFix"></image>
+        <image class="btn" bindtap="onTapNext" src="/images/play/next.png" mode="widthFix"></image>
+        <!-- <button class="js-quiz" bindtap="copybook">临摹</button> -->
+        <image class="btn" bindtap="yuyinPlay" src="/images/play/audio-high.png" mode="widthFix" data-url="{{audioUrl}}"></image>
+      </view>
+    </view>
+    <view class="outer-actions">
+      <!-- <button class="showCharacter read" bindtap="wordYun">跟我读</button> -->
+      <!-- <button class="showCharacter read" bindtap="readStrokes">笔顺</button> -->
+      <button class="hideCharacter" bindtap="onTapFollow">跟写</button>
+      <button class="hideCharacter" bindtap="onTapBlind">默写</button>
+    </view>
+  </view>
+</view>

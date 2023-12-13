@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <view></view>
+  <block wx:if="{{!id}}">
+    <view class="subtitle">当前还没有正在学习的课本，请</view>
+    <view class="plain-button long" style="margin-top: 64rpx;" bind:tap="onClickChange">选择课本</view>
+  </block>
+  <block wx:else>
+    <view class="version">
+      <vie>正在学习: <text class="warn">{{version}}</text></vie>
+      <view class="outline-button" bind:tap="onClickChange">切换课本</view>
+    </view>
+    <view class="title" style="margin-top: 48rpx;">{{title}}</view>
+    <view class="plain-button long" style="margin-top: 64rpx;" bind:tap="onClickLearn">开始学习</view>
+    <view class="subtitle" style="margin-top: 12rpx;">{{subtitle}}</view>
+  </block>
+  <!-- <view>拼音基础</view>
+  笔顺查询
+  练一练：供多少笔画，正确笔顺，第3笔是
+  <view>教程</view> -->
+</view>
+<!-- <view class="grid">
+    <view>拼音基础</view>
+    <view>笔画基础</view>
+</view> -->
+<view style="flex:1;align-self: center;">
+  <view class="search">
+    <icon class="icon" type="search" size="20"></icon><input class="input" placeholder="请输入要查询的汉字" bindinput="onInputChange"></input>
+    <view class="outline-button" bind:tap="onTapSearch">搜索</view>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<!--pages/settings/index.wxml-->
+<view class="app">
+  <view class="group">
+    <view class="cell">
+      <view class="title">我的收藏</view>
+      <view class="footer"></view>
+    </view>
+  </view>
+
+  <view class="group">
+    <view class="cell">
+      <view class="title">卡片背景框类型</view>
+      <view class="footer"></view>
+    </view>
+    <view class="cell">
+      <view class="title">卡片颜色</view>
+      <view class="footer"></view>
+    </view>
+    <view class="cell">
+      <view class="title">卡片字体</view>
+      <view class="footer"></view>
+    </view>
+    <view class="cell">
+      <view class="title">笔画颜色</view>
+      <view class="footer"></view>
+    </view>
+  </view>
+
+  <view class="group">
+    <view class="cell">
+      <view class="title">使用帮助</view>
+      <view class="footer"></view>
+    </view>
+    <button class="cell" open-type="feedback">
+      <view class="title">意见反馈</view>
+      <view class="footer"></view>
+    </button>
+    <view class="cell">
+      <view class="title">关于</view>
+      <view class="footer"></view>
+    </view>
+  </view>
+
+
+</view>

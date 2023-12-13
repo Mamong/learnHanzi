@@ -1,0 +1,19 @@
+/* pages/textbook/books/index.wxss */
+.book{
+  display: flex;
+  padding: 16rpx 24rpx;
+  border-bottom: 2rpx solid #dadada;
+}
+
+.cover{
+  width: 100rpx;
+}
+
+.book .content{
+  flex:1;
+  font-size: 26rpx;
+}
+
+.book .footer{
+  align-self: center;
+}

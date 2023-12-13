@@ -1,0 +1,65 @@
+/* pages/textbook/index.wxss */
+.cates {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #F6F6F6;
+}
+
+.cates .cate {
+  flex: 1;
+  text-align: center;
+  padding: 8rpx;
+}
+
+.cate.selected {
+  color: #07c160;
+}
+
+.lesson {
+  margin-bottom: 24rpx;
+  padding: 12rpx 24rpx;
+  background-color: white;
+}
+
+.lesson-title {
+  padding-bottom: 16rpx;
+}
+
+.lesson-name {
+  margin-left: 24rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.lesson-words {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.word-wrapper {
+  margin-right: 16rpx;
+  margin-bottom: 16rpx;
+
+  text-align: center;
+  line-height: 96rpx;
+  font-size: 64rpx;
+  color: black;
+}
+
+.word {
+  display: inline-block;
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.lesson-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-btn {
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 24rpx;
+}

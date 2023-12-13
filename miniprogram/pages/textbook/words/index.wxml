@@ -1,0 +1,19 @@
+<!--pages/textbook/index.wxml-->
+<view class="app">
+<view class="cates"><view class="cate {{item.key==cate?'selected':''}}" wx:for="{{cates}}" bind:tap="onTapCate" data-cate="{{item.key}}">{{item.name}}</view></view>
+  <view class="lesson" style="color: #07c160;" wx:for="{{list}}" wx:key="name" wx:if="{{item[cate]}}">
+    <view class="lesson-title"><text class="lesson-name">{{item.name}}</text></view>
+    <view class="lesson-words">
+    <view class="word-wrapper" wx:for="{{item[cate]}}" wx:key="*this" bind:tap="onTapWord" data-word="{{item}}">
+      <view class="word" wx:for="{{item}}" style='background-image:url("{{wordbkg}}")'>{{item}}</view>
+      </view>
+    </view>
+    <view class="lesson-footer">
+      <text>(共{{item[cate].length}}个)</text>
+      <view class="footer-btn" style='background-image: url("{{dictationIcon}}");' bind:tap="onTapRecite" data-index="{{index}}"></view>
+      <view class="footer-btn" style='background-image: url("{{pencilIcon}}");' bind:tap="onTapWrite" data-index="{{index}}"></view>
+    </view>
+
+  </view>
+
+</view>

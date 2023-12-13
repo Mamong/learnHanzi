@@ -1,0 +1,66 @@
+/**index.wxss**/
+
+/* page {
+  padding-top: 54rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+} */
+
+page{
+  height: 100%;
+  justify-content: space-between;
+}
+
+.container{
+  flex:2
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  grid-template-rows: repeat(3, 33.33%);
+}
+
+.version {
+  display: flex;
+  padding: 24rpx 24rpx;
+  justify-content: space-between;
+  align-self: stretch;
+  align-items: center;
+}
+
+
+
+.plain-button.long {
+  padding-left: 150rpx;
+  padding-right: 150rpx;
+}
+
+.title {
+  color: #07c160;
+  font-size: 48rpx;
+  font-weight: 500;
+}
+
+.subtitle {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.search{
+  display: flex;
+  /* align-self: stretch; */
+  margin: 8rpx 24rpx;
+  padding: 8rpx 12rpx;
+  background-color: #ddd;
+  border-radius: 16rpx;
+}
+
+.search .input{
+  flex: 1;
+  padding: 12rpx 12rpx;
+}
+
+.search .icon{
+  align-self: center;
+}

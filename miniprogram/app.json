@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/hanziWrite/hanziWrite",
+    "pages/textbook/words/index",
+    "pages/wordInfo/index",
+    "pages/textbook/books/index",
+    "pages/settings/index",
+    "pages/recite/index",
+    "pages/recite/result/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "学汉字",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#07c160",
+    "list": [
+      {
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-select.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/settings.png",
+        "selectedIconPath": "images/settings-select.png",
+        "pagePath": "pages/settings/index",
+        "text": "设置"
+      }
+    ]
+  }
+}

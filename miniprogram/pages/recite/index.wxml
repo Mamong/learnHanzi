@@ -1,0 +1,60 @@
+<!--pages/recite/index.wxml-->
+<view>({{index+1}}/{{words.length}})</view>
+<view>
+  <view class="tone-item" wx:for="{{tones}}" bind:tap="onTapTone" data-url="{{item.tone}}">
+  <text class="tone">{{item.pinyin}}</text>
+    <text class="iconfont icon-audio-high"></text>
+  </view>
+</view>
+<view><text class="iconfont icon-delete"></text><text wx:for="{{means}}">{{item}}</text></view>
+
+<view class="word" style='background-image:url("{{backgroundToSvg}}")'>
+  <canvas class="sign" id="writer-canvas" canvas-id="writer-canvas" bindtouchmove="move" bindtouchstart="start" bindtouchend="end" bindtouchcancel="cancel" bindlongtap="tap" disable-scroll="true" binderror="error" type="2d">
+  </canvas>
+</view>
+<view class="tool-bar">
+  <view class="iconfont icon-outgoing2" bind:tap="onTapUndo"></view>
+  <view class="iconfont icon-outgoing" bind:tap="onTapRedo"></view>
+  <view class="iconfont icon-delete" bind:tap="onTapReset"></view>
+  <view class="iconfont icon-stop" bind:tap="onSelectLine"></view>
+  <view class="iconfont icon-settings" bind:tap="onShowPanel"></view>
+</view>
+
+
+<view class="outer-actions">
+  <button class="hideCharacter" bindtap="onTapPrevious">上一个</button>
+  <button class="hideCharacter" bindtap="onTapNext">下一个</button>
+</view>
+
+<view class="mask" hidden="{{!showPanel}}" bind:tap="onHidePanel">
+</view>
+
+<view class="settings-panel" animation='{{animationData}}'>
+  <view class="group">
+    <label class="checkbox">
+      <checkbox checked="{{formData.autoRead}}" bind:tap="onTapCheckbox" data-field="autoRead" />自动朗读
+    </label>
+    <label class="slider-box">朗读次数<slider min="1" max="5" bindchanging="sliderChange" data-field="readNum"></slider>({{formData.readNum}})次</label>
+  </view>
+  <view class="group">
+    <label class="checkbox">
+      <checkbox checked="{{formData.switch}}" bind:tap="onTapCheckbox" data-field="switch" />自动切换
+    </label>
+    <label class="slider-box">切换间隔<slider min="10" max="60" step="5" bindchanging="sliderChange" data-field="switchInterval"></slider>({{formData.switchInterval}})秒</label>
+  </view>
+  <view class="group">
+    <label class="checkbox">
+      <checkbox checked="{{formData.showPinyin}}" bind:tap="onTapCheckbox" data-field="showPinyin" />显示拼音
+    </label>
+  </view>
+  <view class="group">
+    <label class="checkbox">
+      <checkbox checked="{{formData.showTips}}" bind:tap="onTapCheckbox" data-field="showTips" />显示提示
+    </label>
+  </view>
+  <view class="group">
+    <label class="checkbox">
+      <checkbox checked="{{formData.shuffle}}" bind:tap="onTapCheckbox" data-field="shuffle" />随机乱序
+    </label>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "hanzi-writer-view": "/components/hanzi-writer-miniprogram/hanzi-writer-view"
+  },
+  "navigationBarTitleText": "练一练"
+}

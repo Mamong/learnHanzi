@@ -1,0 +1,11 @@
+<!--pages/recite/result/index.wxml-->
+<text>pages/recite/result/index.wxml</text>
+<view wx:for="{{words}}">
+  <view>{{item}}</view>
+  <view>pinyin</view>
+  <view class="iconfont icon-audio-high"></view>
+  <image src="{{result[index]}}"></image>
+  <icon type="success"></icon>
+</view>
+<view bind:tap="onTapBack">返回</view>
+<view bind:tap="onTapRecite">重新听写</view>

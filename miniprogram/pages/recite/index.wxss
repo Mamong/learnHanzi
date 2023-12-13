@@ -1,0 +1,96 @@
+/* pages/recite/index.wxss */
+page{
+  /* justify-content: center; */
+  display: block;
+  /* height: 100%; */
+} 
+
+.tone-item{
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  text-align: center;
+  margin-bottom: 12rpx;
+}
+
+.tone{
+  margin-right: 12rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.word{
+  margin: 24rpx auto;
+  width: 600rpx;
+  height: 600rpx;
+}
+
+.word canvas{
+  width: 100%;
+  height: 100%;
+}
+
+.tool-bar{
+  display: flex;
+  color: #07c160;
+  justify-content: center;
+}
+
+.tool-bar .iconfont{
+  font-size: 46rpx;
+    padding: 24rpx;
+}
+
+.mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000080;
+}
+
+.settings-panel{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -500rpx;
+  padding: 24rpx;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.slider-box{
+  display: flex;
+  align-items: center;
+}
+
+.slider-box slider{
+  flex: 1;
+}
+
+.outer-actions{
+  display: flex;
+  justify-content: center;
+}
+
+.outer-actions button {
+  display: inline-block;
+  width: 70px !important;
+  padding: 3px 5px;
+  border: 1px solid #07c160;
+  color: #07c160;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  margin: 0;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+.outer-actions button:first-child {
+  margin-right: 12rpx;
+}
+
+.outer-actions button:last-child {
+  margin-left: 12rpx;
+}

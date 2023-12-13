@@ -1,0 +1,19 @@
+<!--pages/textbook/books/index.wxml-->
+<view class="app">
+  <view class="picker">
+    <view wx:for="{{allpublication}}">{{item.name}}</view>
+  </view>
+  <view class="list">
+    <view class="book" wx:for="{{list}}" bind:tap="onTapBook" data-index="{{index}}">
+      <image class="cover" src="{{item.cover}}" mode="widthFix"></image>
+      <view class="content">
+        <view class="title">{{item.title}}</view>
+        <view class="version">{{item.version}}</view>
+        <view class="subtitle">{{item.subtitle}}</view>
+      </view>
+      <view class="footer">
+        <view class="outline-button" catch:tap="onSelectBook" data-index="{{index}}">选择</view>
+      </view>
+    </view>
+  </view>
+</view>

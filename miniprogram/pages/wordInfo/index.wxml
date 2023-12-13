@@ -1,0 +1,72 @@
+<!--pages/wordInfo/index.wxml-->
+<view class="app">
+  <view class="section header">
+    <view class="section-content">
+      <block wx:if="{{word.length == 1}}">
+        <view class="flex">
+          <view class="stroke-order big" style='background-image:url("{{backgroundToSvg}}")'>{{word}}</view>
+          <view class="params">
+            <view class="tone-item" wx:for="{{tones}}" bind:tap="onTapTone" data-url="{{item.tone}}"><text class="tone">{{item.pinyin}}</text>
+              <view style='width: 48rpx;height: 48rpx;background-image: url("{{soundIcon}}");'></view>
+            </view>
+            <view>部首：<block wx:for="{{word_radicals}}">{{item}}</block> <text style="margin-left: 48rpx;">笔画：{{word_stroke_count[0]}}</text></view>
+            <view>繁体：<block wx:for="{{traditional}}">{{item}}</block> <text style="margin-left: 48rpx;">五笔：<block wx:for="{{word_wubi}}">{{item}}</block></text></view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="flex">
+          <view class="stroke-order" style='background-image:url("{{backgroundToSvg}}")' wx:for="{{word}}">{{item}}</view>
+        </view>
+        <view class="tone-item" wx:for="{{tones}}" bind:tap="onTapTone" data-url="{{item.tone}}"><text class="tone">{{item.pinyin}}</text>
+          <view style='width: 48rpx;height: 48rpx;background-image: url("{{soundIcon}}");'></view></view>
+      </block>
+    </view>
+  </view>
+  <view class="section orders" wx:if="{{stroke_orders.length>0}}">
+    <view class="section-title">笔画顺序</view>
+    <view class="section-content">
+      <image class="stroke-order" style='background-image:url("{{item}}")' wx:for="{{stroke_orders}}"></image>
+    </view>
+  </view>
+  <view class="section basic">
+    <view class="section-title">基本释义</view>
+    <view class="section-content">
+      <view class="section-definition group" wx:for="{{means}}">
+        <view class="section-tone" wx:if="{{means.length>1}}">{{item.pinyin}}</view>
+        <view class="section-line" wx:for="{{item.definition}}">{{means.length==1?index+1+'.':''}}{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="section phrase" wx:if="{{related_terms.length>0}}">
+    <view class="section-title">相关词组</view>
+    <view class="section-content">
+      <view class="section-phrase" wx:for="{{related_terms}}">
+        <view class="section-tone" wx:if="{{related_terms.length>1}}">{{item.pinyin}}</view>
+        <view class="section-grid group">
+          <view class="section-item" wx:for="{{item.related_term}}" bind:tap="onTapItem" data-item="{{item}}">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="section idiom">
+    <view class="section-title">成语</view>
+    <view class="section-content"></view>
+  </view>
+  <view class="section synonym" wx:if="{{synonym.length>0}}">
+    <view class="section-title">近义词</view>
+    <view class="section-content">
+      <view class="section-grid">
+        <view class="section-item" wx:for="{{synonym}}" bind:tap="onTapItem" data-item="{{item}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="section antonym" wx:if="{{antonym.length>0}}">
+    <view class="section-title">反义词</view>
+    <view class="section-content">
+      <view class="section-grid">
+        <view class="section-item" wx:for="{{antonym}}" bind:tap="onTapItem" data-item="{{item}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>
